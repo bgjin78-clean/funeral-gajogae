@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>장례식장정보 | 가족애 장례</title>
-<meta name="description" content="부산광역시와 경상남도 장례식장의 주소, 빈소, 주차, 연락처를 지역별로 확인합니다.">
+<title>장례식장 사진 | 가족애 장례</title>
+<meta name="description" content="장례식장 사진을 확인합니다. 사진에는 가족애 장례 표시가 들어가 있습니다.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -33,28 +33,15 @@
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <h1>부산 · 경남 장례식장</h1>
-      <p><strong>34개 시·군·구, 122곳</strong>의 주소와 빈소, 주차, 연락처입니다. 고르기 어려우면 지역만 말씀해 주세요. 의뢰 전 추천 문의도 받습니다.</p>
+      <p><a href="halls.html">장례식장정보</a></p>
+      <h1 data-hall-title>장례식장</h1>
+      <p data-hall-lead></p>
     </div>
   </section>
   <section>
     <div class="wrap">
-      <input class="search" data-hall-search type="search" placeholder="시설명 또는 주소 검색" aria-label="장례식장 검색">
-      <div class="filters" data-kind-chips>
-        <button class="chip on" type="button" data-kind="all">전체</button>
-        <button class="chip" type="button" data-kind="공설">공설</button>
-        <button class="chip" type="button" data-kind="사설">사설</button>
-      </div>
-      <div data-region-chips></div>
-      <p class="note">숫자는 해당 지역 시설 수입니다. 지역 버튼을 다시 누르면 전체 목록으로 돌아갑니다. 운영 시간과 요금은 바뀔 수 있으니 예약 전에 해당 장례식장에 확인해 주세요.</p>
-      <div data-hall-list></div>
-      <div class="callout" style="margin-top:28px">
-        <div>
-          <h2>어느 식장으로 할지 같이 보겠습니다</h2>
-          <p>집과의 거리, 빈소 크기, 주차, 공설·사설 차이를 전화로 정리해 드립니다.</p>
-        </div>
-        <a class="btn btn-gold" href="tel:01066413895">1566-2505</a>
-      </div>
+      <div data-hall-detail></div>
+      <div class="hall-gallery" data-hall-gallery></div>
     </div>
   </section>
 </main>
