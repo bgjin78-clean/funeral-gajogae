@@ -162,9 +162,11 @@
         var page = "hall.html?name=" + encodeURIComponent(hall.name);
         card.innerHTML =
           '<span class="tag">' + tag(hall) + "</span>" +
+          '<div class="hall-head"><div class="hall-copy">' +
           "<h3>" + esc(hall.name) + "</h3>" +
           "<p>" + esc(hall.address) + "</p>" +
           (hall.phone ? '<p><a class="tel" href="tel:' + hall.phone.replace(/[^0-9]/g, "") + '">' + esc(hall.phone) + "</a></p>" : "") +
+          "</div></div>" +
           facts(hall) +
           '<div class="meta">' + hall.amenities.map(function (itemName) { return "<span>" + esc(itemName) + "</span>"; }).join("") + "</div>" +
           '<div class="hall-actions"><a href="' + page + '">사진 더보기</a><a href="' + map + '" target="_blank" rel="noopener">길찾기</a></div>';
@@ -177,7 +179,8 @@
           var canvas = window.HallPhoto.mark(img, "card");
           canvas.setAttribute("aria-label", hall.name + " 대표 사진");
           link.appendChild(canvas);
-          card.insertBefore(link, card.firstChild);
+          var head = card.querySelector(".hall-head");
+          if (head) head.appendChild(link);
         });
       });
       list.appendChild(grid);

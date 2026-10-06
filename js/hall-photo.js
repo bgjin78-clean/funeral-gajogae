@@ -15,11 +15,10 @@ window.HallPhoto = {
   },
 
   load: function (name, index) {
-    var listed = window.HALL_PHOTOS && window.HALL_PHOTOS[name];
-    if (listed) {
-      var file = listed[index - 1];
-      if (!file) return Promise.resolve(null);
-      return this.loadUrl("images/halls/" + encodeURIComponent(name) + "/" + encodeURIComponent(file));
+    if (window.HALL_PHOTOS) {
+      var listed = window.HALL_PHOTOS[name];
+      if (!listed || !listed[index - 1]) return Promise.resolve(null);
+      return this.loadUrl("images/halls/" + encodeURIComponent(name) + "/" + encodeURIComponent(listed[index - 1]));
     }
     var files = this.files(name, index);
     var exts = this.exts;
@@ -71,9 +70,9 @@ window.HallPhoto = {
     if (mode === "tile") {
       var size = Math.max(28, Math.round(Math.min(canvas.width, canvas.height) / 12));
       ctx.font = "700 " + size + "px 'Noto Sans KR', sans-serif";
-      ctx.fillStyle = "rgba(255,255,255,0.55)";
-      ctx.strokeStyle = "rgba(16,40,61,0.45)";
-      ctx.lineWidth = Math.max(2, size / 12);
+      ctx.fillStyle = "rgba(255,255,255,0.2)";
+      ctx.strokeStyle = "rgba(16,40,61,0.14)";
+      ctx.lineWidth = Math.max(1, size / 22);
       ctx.save();
       ctx.translate(canvas.width / 2, canvas.height / 2);
       ctx.rotate(-Math.PI / 6);
@@ -87,11 +86,11 @@ window.HallPhoto = {
       }
       ctx.restore();
     } else {
-      var cardSize = Math.max(18, Math.round(canvas.width / 9));
+      var cardSize = Math.max(16, Math.round(canvas.width / 14));
       ctx.font = "700 " + cardSize + "px 'Noto Sans KR', sans-serif";
-      ctx.fillStyle = "rgba(255,255,255,0.92)";
-      ctx.strokeStyle = "rgba(16,40,61,0.62)";
-      ctx.lineWidth = Math.max(3, cardSize / 8);
+      ctx.fillStyle = "rgba(255,255,255,0.22)";
+      ctx.strokeStyle = "rgba(16,40,61,0.16)";
+      ctx.lineWidth = Math.max(1, cardSize / 18);
       ctx.strokeText(text, canvas.width / 2, canvas.height / 2);
       ctx.fillText(text, canvas.width / 2, canvas.height / 2);
     }
