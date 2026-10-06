@@ -15,6 +15,12 @@ window.HallPhoto = {
   },
 
   load: function (name, index) {
+    var listed = window.HALL_PHOTOS && window.HALL_PHOTOS[name];
+    if (listed) {
+      var file = listed[index - 1];
+      if (!file) return Promise.resolve(null);
+      return this.loadUrl("images/halls/" + encodeURIComponent(name) + "/" + encodeURIComponent(file));
+    }
     var files = this.files(name, index);
     var exts = this.exts;
     var self = this;
@@ -40,6 +46,15 @@ window.HallPhoto = {
         img.src = src;
       }
       tryNext();
+    });
+  },
+
+  loadUrl: function (src) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      img.onload = function () { resolve(img); };
+      img.onerror = function () { resolve(null); };
+      img.src = src;
     });
   },
 
