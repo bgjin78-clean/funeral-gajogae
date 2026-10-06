@@ -197,7 +197,7 @@ details.faq p { margin: 10px 0 0; color: #243040; font-size: 16.5px; }
   border-radius: 12px; overflow: hidden; background: #efe8dc;
 }
 .hall-photo canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hall-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.hall-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
 .hall-gallery figure { margin: 0; }
 .hall-gallery canvas { width: 100%; height: auto; display: block; border-radius: 16px; background: #efe8dc; }
 .hall-gallery figcaption { margin-top: 6px; color: #3d4854; font-size: 14px; font-weight: 700; }
@@ -263,7 +263,8 @@ details.faq p { margin: 10px 0 0; color: #243040; font-size: 16.5px; }
   .nav-toggle { display: inline-flex; }
   .nav-row { display: none; flex-direction: column; align-items: stretch; padding-bottom: 14px; }
   .nav-row.open { display: flex; }
-  .grid-3, .grid-4, .foot-grid, .hall-gallery { grid-template-columns: 1fr; }
+  .grid-3, .grid-4, .foot-grid { grid-template-columns: 1fr; }
+  .hall-gallery { grid-template-columns: 1fr 1fr; }
   .hall-photo { flex-basis: 112px; width: 112px; height: 80px; }
   .hero { padding: 48px 0 92px; }
   .promo { flex-direction: column; align-items: flex-start; padding: 28px 22px; }
