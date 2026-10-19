@@ -179,6 +179,7 @@ details.faq p { margin: 10px 0 0; color: #243040; font-size: 16.5px; }
   border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 14px; cursor: pointer; font-weight: 700; color: var(--navy);
 }
 .chip.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+a.chip { display: inline-block; }
 .search { border-radius: 12px; width: min(360px, 100%); cursor: text; }
 .region-label { margin: 22px 0 10px; font-size: 20px; color: var(--navy); }
 .hall-card h3 { margin: 0 0 6px; font-size: 20px; color: var(--navy); }
@@ -255,6 +256,19 @@ details.faq p { margin: 10px 0 0; color: #243040; font-size: 16.5px; }
   .grid-3, .grid-4, .foot-grid { grid-template-columns: 1fr 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
 }
+.cost-range { margin: 8px 0 14px; font-size: clamp(32px, 5vw, 48px); font-weight: 900; letter-spacing: -0.04em; color: var(--gold-deep); line-height: 1.15; }
+.save-pill { display: inline-block; margin: 0 0 18px; padding: 6px 12px; border-radius: 999px; background: #f6d98a; color: #1b1408; font-size: 14px; font-weight: 800; }
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cost-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.cost-card.product { background: #fffaf2; border-color: #e4c56a; }
+.cost-card h3 { margin: 0 0 8px; }
+.cost-card .sum { margin: 0 0 8px; font-size: 28px; font-weight: 900; letter-spacing: -0.03em; color: var(--navy); line-height: 1.2; }
+.check-list { margin: 12px 0 0; padding: 0; list-style: none; }
+.check-list li { position: relative; padding-left: 22px; }
+.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-deep); font-weight: 800; }
+.fee-note { margin: 14px 0 0; color: #3d4854; font-size: 14px; line-height: 1.7; }
+.btn-block { display: flex; justify-content: center; margin-top: 22px; }
+
 @media (max-width: 720px) {
   .topbar { display: none; }
   .logo img { height: 40px; }
@@ -263,7 +277,9 @@ details.faq p { margin: 10px 0 0; color: #243040; font-size: 16.5px; }
   .nav-toggle { display: inline-flex; }
   .nav-row { display: none; flex-direction: column; align-items: stretch; padding-bottom: 14px; }
   .nav-row.open { display: flex; }
-  .grid-3, .grid-4, .foot-grid { grid-template-columns: 1fr; }
+  .grid-3, .grid-4, .foot-grid, .cost-grid { grid-template-columns: 1fr; }
+  .compare { table-layout: fixed; }
+  .compare th, .compare td { padding: 12px 8px; font-size: 14px; word-break: break-word; }
   .hall-gallery { grid-template-columns: 1fr 1fr; }
   .hall-photo { flex-basis: 112px; width: 112px; height: 80px; }
   .hero { padding: 48px 0 92px; }

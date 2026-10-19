@@ -95,9 +95,12 @@
   ];
 
   groups.forEach(function (group) {
+    var count = window.HALLS.filter(group.match).reduce(function (sum, item) {
+      return sum + item.halls.length;
+    }, 0);
     var title = document.createElement("p");
     title.className = "region-label";
-    title.textContent = group.label;
+    title.textContent = group.label + " (" + count + "개소)";
     chips.appendChild(title);
     var row = document.createElement("div");
     row.className = "filters";
